@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 // 在之前的路由后面配上中间件
-Route::get('/', 'PagesController@root')->name('root');
+Route::redirect('/', '/products')->name('root');
+Route::get('products', 'ProductsController@index')->name('products.index');
 
 // 在之前的路由里加上一个 verify 参数
 Auth::routes(['verify' => true]);
