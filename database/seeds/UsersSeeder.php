@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
 
 class UsersSeeder extends Seeder
 {
@@ -8,9 +9,6 @@ class UsersSeeder extends Seeder
     {
         // 通过 factory 方法生成 100 个用户并保存到数据库中
         factory(\App\Models\User::class, 100)->create();
-
-        // 插入到数据库中
-        User::insert($user_array);
 
         // 单独处理第一个用户的数据
         $user = User::find(1);
